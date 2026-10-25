@@ -1,0 +1,13 @@
+module demux1:4_dataflow (
+    input wire data_in,
+    input wire [1:0] sel,
+    output wire data_out0,data_out1,data_out2,data_out3
+);
+
+    assign data_out0 = data_in & (~sel[1]) & (~sel[0]);
+    assign data_out1 = data_in & (~sel[1]) & (sel[0]);
+    assign data_out2 = data_in & (sel[1]) & (~sel[0]);
+    assign data_out3 = data_in & (sel[1]) & (sel[0]);t
+
+endmodule
+
